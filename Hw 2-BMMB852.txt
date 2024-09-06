@@ -36,7 +36,7 @@ The file contains 4011 sequence regions.
 
 
 	•	How many genes are listed for this organism?
-The file contains 0 genes. This could be because the file does not have any feature type that is labeled as a gene.
+The file contains 0 genes. The file does not have any feature type that is labeled as a gene.
 
  grep -w "gene" Salmo_salar.Ssal_v3.1.112.abinitio.gff3 | wc -l
        0
