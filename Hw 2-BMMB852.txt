@@ -1,0 +1,72 @@
+Select an organism and download its corresponding GFF file. Investigate this file with command line UNIX tools.
+
+Organism: salmo_salar 
+
+# Made directory using
+$ mkdir salmon_gff
+
+# Change directory 
+$ cd salmon_gff
+
+#activated bioinfo enviroment 
+$ micromamba activate bioinfo
+
+#downloaded GFF file 
+$ wget https://ftp.ensembl.org/pub/release-112/gff3/salmo_salar/Salmo_salar.Ssal_v3.1.112.abinitio.gff3.gz
+
+#unzip the file
+$ gunzip Salmo_salar.Ssal_v3.1.112.abinitio.gff3.gz
+
+Find answers to the following questions:
+	•	Tell us a bit about the organism.
+Salmon salar is an Atlantic salmon. It is found in the northern Atlantic Ocean and rivers connected to the ocean. This is a popular fish for human consumption.
+
+	•	How many features does the file contain?
+The file contains 622145 features.
+
+grep -v "^#" Salmo_salar.Ssal_v3.1.112.abinitio.gff3 | wc -l
+  622145
+
+
+	•	How many sequence regions (chromosomes) does the file contain? 
+The file contains 4011 sequence regions.
+
+# grep "##sequence-region" Salmo_salar.Ssal_v3.1.112.abinitio.gff3 | wc -l
+    4011
+
+
+	•	How many genes are listed for this organism?
+The file contains 0 genes. This could be because the file does not have any feature type that is labeled as a gene.
+
+ grep -w "gene" Salmo_salar.Ssal_v3.1.112.abinitio.gff3 | wc -l
+       0
+
+I then wanted to see how are features listed. 
+
+$ cut -f3 Salmo_salar.Ssal_v3.1.112.abinitio.gff3 | sort | uniq -c | sort -nr
+This code gave an output mentioning it has 547772 exons, 74373 coding sequence,  70362 mRNA, and 4011 sequence region.
+
+547772 exon
+74373 ###
+70362 mRNA
+4011 region
+
+	•	What are the top ten most annotated feature types (column 3) across the genome?
+
+To see the top-ten annotated feature types, we can use the ‘cut’ command to extract the third column as it contains the feature types. Then, the ‘sort’ command will sort the data. The ‘uniq -c’ command brings a unique value to the file. The ‘sort -nr’ command will sort the output in reverse order. ‘head-10’ will give the top 10 most frequent feature types.
+
+cut -f3 Salmo_salar.Ssal_v3.1.112.abinitio.gff3 | sort | uniq -c | sort -nr | head -10
+547772 exon
+74373 ###
+70362 mRNA
+4011 region
+   1 ##sequence-region   CAJNNT020004222.1 1 243316
+   1 ##sequence-region   CAJNNT020004221.1 1 184858
+   1 ##sequence-region   CAJNNT020004220.1 1 419898
+   1 ##sequence-region   CAJNNT020004219.1 1 88341
+   1 ##sequence-region   CAJNNT020004218.1 1 161861
+   1 ##sequence-region   CAJNNT020004217.1 1 261194
+
+
+	•	Having analyzed this GFF file, does it seem like a complete and well-annotated organism?
+This GFF file provides details about the exons, coding sequences, mRNA, and sequence regions, which are important for understanding the coding regions of the genome. However, it does not have gene annotations, which is essential for analyzing gene structure. Including more annotations such as about the genes, and the regulatory elements could provide a complete snapshot of the genome. So, it's not well-annotated.
