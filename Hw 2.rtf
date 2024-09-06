@@ -1,0 +1,166 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red34\green45\blue53;\red59\green35\blue34;\red215\green211\blue183;
+}
+{\*\expandedcolortbl;;\cssrgb\c17647\c23137\c27059;\csgenericrgb\c23317\c13541\c13291;\cssrgb\c87500\c85798\c76563;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}}
+\margl1440\margr1440\vieww17700\viewh14340\viewkind0
+\deftab720
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\fs32 \cf2 \expnd0\expndtw0\kerning0
+Select an organism and download its corresponding GFF file\cf2 . Investigate this file with command line UNIX tools.\cf2 \
+\pard\tx720\pardeftab720\partightenfactor0
+\cf2 I choose salmo_salar organism. \
+\
+\cf2 # Made directory using\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs34 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ mkdir salmon_gff
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \
+# Change d\cf2 ir\cf2 ectory \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs34 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ cd salmon_gff
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \
+#activated bioinfo enviroment \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs34 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ micromamba activate bioinfo
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \
+#downloaded GFF file \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs34 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ wget https://ftp.ensembl.org/pub/release-112/gff3/salmo_salar/Salmo_salar.Ssal_v3.1.112.abinitio.gff3.gz
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \
+#unzip the file\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs34 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ gunzip Salmo_salar.Ssal_v3.1.112.abinitio.gff3.gz
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \
+Find answers to the following questions:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Tell us a bit about the organism.\
+\pard\tx720\pardeftab720\partightenfactor0
+\cf2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+How many features does the file contain?\
+\pard\tx720\pardeftab720\partightenfactor0
+\cf2 The file contains 622145 features.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs34 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0 grep -v "^#" Salmo_salar.Ssal_v3.1.112.abinitio.gff3 | wc -l\
+  622145
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\tx720\pardeftab720\partightenfactor0
+\cf2 \
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls3\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+How many sequence regions (chromosomes) does the file contain?\'a0\
+\pard\tx720\pardeftab720\partightenfactor0
+\cf2 The file contain\cf2 s\cf2  4011 sequence regions.\
+# \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs34 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0  grep "##sequence-region" Salmo_salar.Ssal_v3.1.112.abinitio.gff3 | wc -l\
+    4011\
+\
+
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls4\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+How many genes are listed for this organism?\
+\pard\tx720\pardeftab720\partightenfactor0
+\cf2 The file contains 0 genes. this could be because the file does not have any feature type that is labeled as a gene.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs34 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0  grep -w "gene" Salmo_salar.Ssal_v3.1.112.abinitio.gff3 | wc -l\
+       0
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\tx720\pardeftab720\partightenfactor0
+\cf2 \
+I then wanted to see how are features listed. \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs34 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ cut -f3 Salmo_salar.Ssal_v3.1.112.abinitio.gff3 | sort | uniq -c | sort -nr
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\tx720\pardeftab720\partightenfactor0
+\cf2 This code gave \cf2 a\cf2 n output mentioning it has 547772 exon, 74373 coding sequence,  70362 mRNA, and \cf2 4011 sequence region.\cf2 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs34 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0 547772 exon\
+74373 ###\
+70362 mRNA\
+4011 region
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\tx720\pardeftab720\partightenfactor0
+\cf2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls5\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+What are the top\cf2  \cf2 ten most annotated feature types (column 3) across the genome?\
+\pard\tx720\pardeftab720\partightenfactor0
+\cf2 To see the top-ten annotated feature ty\cf2 pe\cf2 s, we can use the \'91cut\'92 command to extract the third column as it contains the feature types. Then, the \'91sort\'92 command will sort the data. The \'91uniq -c\'92 command brings a unique value \cf2 to\cf2  the file. The \'91sort -nr\'92 command will sort the output in reverse order. \'91head-10\'92 will give the top 10 most frequent feature types.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs34 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0 cut -f3 Salmo_salar.Ssal_v3.1.112.abinitio.gff3 | sort | uniq -c | sort -nr | head -10\
+547772 exon\
+74373 ###\
+70362 mRNA\
+4011 region\
+   1 ##sequence-region   CAJNNT020004222.1 1 243316\
+   1 ##sequence-region   CAJNNT020004221.1 1 184858\
+   1 ##sequence-region   CAJNNT020004220.1 1 419898\
+   1 ##sequence-region   CAJNNT020004219.1 1 88341\
+   1 ##sequence-region   CAJNNT020004218.1 1 161861\
+   1 ##sequence-region   CAJNNT020004217.1 1 261194
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\tx720\pardeftab720\partightenfactor0
+\cf2 \
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls6\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Having analyzed this GFF file, does it seem like a complete and well-annotated organism?\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \
+This GFF file provides details about the exons, coding sequences,mRNA, and sequence regions, which are imp\cf2 or\cf2 tant for understanding the coding regions of the genome. However, it does not have gene annotations, which is also equally essential for analy\cf2 z\cf2 ing gene structure. Including more annotations such as abou\cf2 t the genes, and\cf2  the regulatory elements could provide a complete snapshot of the genome. So, I think it's not well annotated\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 Create a text file that shows both how you downloaded the data and how you generated each of your results. \uc0\u8232 \u8232 Commit the file to your GitHub repository that you created for this course.\u8232 \u8232 Note that future assignments may ask someone else to repeat your findings. Build your report with repeatability/reproducibility in mind.\'a0\
+Submit the text file here to get graded.}
