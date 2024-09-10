@@ -1,5 +1,4 @@
 Select an organism and download its corresponding GFF file. Investigate this file with command line UNIX tools.
-Select an organism and download its corresponding GFF file. Investigate this file with command line UNIX tools.
 
 Organism: salmo_salar 
 
