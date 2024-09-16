@@ -257,6 +257,9 @@ $ cat ncbi_dataset/data/GCF_000005845.2/genomic.gff |awk '$3=="CDS" { print $0 }
 
 # Analysing datasets in IGV
 
-The genome sequence is 4,641bp long. the maximum zoon let us visualize 49 bp at a time.When comparing the gene and CDS sequences, they align quite well. The start codon, methionine, matches exactly with the start of both the gene and CDS. Similarly, the stop codon is consistent in both sequences, with the CDS and gene ending simultaneously. This strain appears to be well-aligned in terms of gene and CDS sequences
+The genome sequence is 4,641bp long. The maximum zooM let us visualize 49 bp at a time. When comparing the gene and CDS sequences, they align quite well. The start codon, methionine, matches exactly with the start of both the gene and CDS. Similarly, the stop codon is consistent in both sequences, with the CDS and gene ending simultaneously. This strain appears to be well-aligned in terms of gene and CDS sequences.
+
+
+
 
 
