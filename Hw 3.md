@@ -244,7 +244,6 @@ srijanaadhikari@MacBook-Air ~/Study/lec04
 $ cat ncbi_dataset/data/GCF_000005845.2/genomic.gff | awk '$3=="gene" {print $0}'
 
 
-
 # code to move data that is explicitly stated gene onto a new file named as gene.gff and CDS to CDS>GFF file by using the following code
 
 srijanaadhikari@MacBook-Air ~/Study/lec04
