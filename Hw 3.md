@@ -68,6 +68,9 @@ cat ncbi_dataset/data/GCF_000005845.2/genomic.gff |awk '$3=="CDS" { print $0 }' 
 
 The genome sequence is 4,641 kbp long. The maximum zoom lets us visualize 49 bp at a time. When comparing the gene and CDS sequences, they align quite well. The start codon, methionine, matches exactly with the start of both the gene and CDS. Similarly, the stop codon is consistent in both sequences, with the CDS and gene ending simultaneously. This strain appears to be well-aligned in terms of gene and CDS sequences.
 
+! [<img width="1177" alt="Screenshot 2024-09-15 at 9 35 54 PM" src="https://github.com/user-attachments/assets/9a62b906-e57b-4765-a4ef-09ab93d0fb7f">] 
+
+
 
 
 
