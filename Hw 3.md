@@ -71,9 +71,7 @@ The genome sequence is 4,641 kbp long. The maximum zoom lets us visualize 49 bp 
 ! [<img width="1177" alt="Screenshot 2024-09-15 at 9 35 54 PM" src="https://github.com/user-attachments/assets/9a62b906-e57b-4765-a4ef-09ab93d0fb7f">] 
 
 
+! [<img width="1167" alt="Screenshot 2024-09-15 at 9 36 09 PM" src="https://github.com/user-attachments/assets/efe96aa0-3467-48e0-84bb-7416d861a92d">]
 
 
-
-
-Github : https://github.com/Sva5726/BMMB-852/blob/main/Hw%203.md 
 
