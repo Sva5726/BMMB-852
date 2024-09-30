@@ -83,12 +83,11 @@ Uncompressed file size: ~95.5 M
 
 Compressed file size: 23 M each. Thus around 52% space was saved.
 
-Space saved: Around 54% (from a total of 243.2MB to 112MB).
 
 How much data would be generated when covering the Yeast, the Drosophila or the Human genome at 30x?
 !![alt text](<Screenshot 2024-09-29 at 11.06.26 PM-2.png>)
 
-​ Around 28.26
+​ Around 28.26 Gb
 
 ## Download the ecoli genome from ensembl
 ```
