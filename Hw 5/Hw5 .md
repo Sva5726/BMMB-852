@@ -134,17 +134,17 @@ read_length = 100
 N=$(echo "10 * 5008864/ 100" | bc)
 echo "Number of reads to simulate: $N"
 ```
-# The files to write the reads to
+## The files to write the reads to
 ```
 R1="simreads/wgsim_read1.fq"
 R2="simreads/wgsim_read2.fq"
 ```
 
-# Make a new directory  and set the path to the directory
+## Make a new directory  and set the path to the directory
 ```
 mkdir -p $(dirname simreads/wgsim_read1.fq)
 ```
-# Simulate reads with wgsim with no errors and uniform base quality
+## Simulate reads with wgsim with no errors and uniform base quality
 ```
 wgsim -N 500886 -1 100 -2 100 -e 0 -r 0 -R 0 -X 0 ecoli.fa simreads/wgsim_read1.fq simreads/wgsim_read2.fq
 ```
