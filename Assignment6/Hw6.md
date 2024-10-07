@@ -1,25 +1,25 @@
 
 Microorganism : E.coli k-12 strain
 
-## SRR number = SRR=SRR1573606
+### SRR number = SRR=SRR1573606
 
-## New directories for reads and reports were created
+### New directories for reads and reports were created
 ```
 mkdir -p reads reports
 ```
-## The first 10000 reads were downloaded and saved in reads directory
+### The first 10000 reads were downloaded and saved in reads directory
 ```
 fastq-dump -X 10000 --split-files -O reads SRR1573606
 ```
-Fastqc to see the quality of data.
+### Fastqc to see the quality of data.
 ```
 fastqc -q -o reports reads/SRR1573606_1.fastq
 ```
-## Reads were trimmed for quality control
+### Reads were trimmed for quality control
 ```
 fastp --cut_right -f 30 -T 80 -i reads/SRR1573606_1.fastq -o reads/SRR1573606_1.trimmed.fastq
 ```
-## Quality of trimmed reports were analysed
+### Quality of trimmed reports were analysed
 ```
 fastqc -q -o reports reads/SRR1573606_1.trimmed.fastq
 ```
