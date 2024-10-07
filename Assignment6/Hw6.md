@@ -48,5 +48,10 @@ Output
 The trimming process has significantly reduced the number of reads and bases. It improved the overall quality of the data. There was a 22% reduction in total reads (i.e., from 10,000 to 7,791). The total bases also reduced by 68.89% (i.e., from 500,000 to 155,570). The low-quality and problematic data were screened out. Also, the report indicates that the overall Q20 and Q30 bases increased after trimming. Q20 bases percentage increased from 91.23% to 97.57%, and Q30 bases percentage increased from 84.83% to 92.92%. These improvements show that the remaining bases after filtering are much higher quality. Q20 and Q30 scores represent the probability of a base call being correct (99% and 99.9% accuracy, respectively). Since I set up to remove the first 30 reads, 2,208 reads were removed as they did not meet the length threshold. The sequences do not contain adapter sequences
 Thus, FastQC improved the overall quality of the dataset by removing short reads, eliminating low-quality reads, and significantly increasing the proportion of high-quality bases (Q20 and Q30).
 
+Before QC
+<img width="1150" alt="before quality ccontrol" src="https://github.com/user-attachments/assets/2b555d17-eee2-4845-a98f-23d6aebae6e7">
+
+After QC
+<img width="1166" alt="After qc" src="https://github.com/user-attachments/assets/e5c73e77-97bb-4a0b-ab49-661f763c9a09">
 
 
