@@ -4,12 +4,11 @@ This is a markdwon report of Makefile. The steps here metniones are about downlo
 
 
 The tools and data used are as follow:
-
-## Genome URL: Escherichia coli Genome
-## SRA Accession: SRR1573606
+### Genome URL: Escherichia coli Genome
+### SRA Accession: SRR1573606
 
 Tools
-
+:
 wgsim : Read simulation
 
 Trimmomatic :  Read trimming
