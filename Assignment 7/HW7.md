@@ -69,5 +69,6 @@ make fastqc
 ```
 Output:
 ```
-FastQC reports: SRR1573606_trimmed.fastq, SRR1573606_trimmed_qc.fastq
+FastQC reports: SRR1573606_trimmed.fastq
+ SRR1573606_trimmed_qc.fastq
 ```
