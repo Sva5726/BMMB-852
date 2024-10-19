@@ -58,7 +58,6 @@ trimmomatic:
 trim: trimmomatic
 	@echo "Trimming reads with Trimmomatic..."
 	mkdir -p $(TRIM_DIR)
-	# First trimming step
 	java -jar $(TRIMMOMATIC_JAR) SE -threads 4 $(SRA_DIR)/$(SRR)_1.fastq $(TRIMMED_FILE) \
 		ILLUMINACLIP:$(ADAPTER_FILE):2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 	$(FASTQC_CMD) $(TRIMMED_FILE) -o $(QC_DIR)
