@@ -38,13 +38,6 @@ simulate: genome
 	@echo "Compressing simulated reads..."
 	gzip $(SIM_READ_1)
 
-# Download Trimmomatic if not present
-trimmomatic:
-	@if [ ! -f "$(TRIMMOMATIC_JAR)" ]; then \
-		echo "Downloading Trimmomatic..."; \
-		wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-$(TRIMMOMATIC_VER).zip; \
-		unzip Trimmomatic-$(TRIMMOMATIC_VER).zip; \
-	fi
 
 # Download reads from SRA and run FastQC
 download:
