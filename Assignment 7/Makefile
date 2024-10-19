@@ -52,15 +52,6 @@ download:
 	fastq-dump --split-files --outdir $(SRR_DIR) $(SRR)
 	$(FASTQC_CMD) $(SRR_DIR)/$(SRR)_1.fastq -o $(QC_DIR)
 
-# Trim reads using Trimmomatic and run FastQC
-trim: trimmomatic download
-	@echo "Trimming reads with Trimmomatic..."
-	mkdir -p $(TRIM_DIR)
-	java -jar $(TRIMMOMATIC_JAR) SE -threads 4 $(SRR_DIR)/$(SRR)_1.fastq $(Trimmed_FILE) ILLUMINACLIP:$(ADAPTER_FILE):2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
-	$(FASTQC_CMD) $(Trimmed_FILE) -o $(QC_DIR)
-	java -jar $(TRIMMOMATIC_JAR) SE -threads 4 $(SRR_DIR)/$(SRR)_1.fastq $(QC_Trimmed_FILE) ILLUMINACLIP:$(ADAPTER_FILE):2:30:10 LEADING:5 TRAILING:5 SLIDINGWINDOW:4:20 MINLEN:50
-	$(FASTQC_CMD) $(QC_Trimmed_FILE) -o $(QC_DIR)
-
 # Generate FastQC reports
 fastqc: download trim
 	@echo "Running FastQC on all trimmed reads..."
