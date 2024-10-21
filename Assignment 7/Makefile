@@ -1,74 +1,46 @@
-# Define variables
-GENOME_URL=https://ftp.ensemblgenomes.ebi.ac.uk/pub/bacteria/release-59/fasta/bacteria_12_collection/escherichia_coli_gca_001606525/dna/Escherichia_coli_gca_001606525.ASM160652v1.dna_rm.toplevel.fa.gz
-GENOME_GZ= Escherichia_coli_gca_001606525.ASM160652v1.dna_rm.toplevel.fa.gz
-GENOME_FILE := Escherichia_coli_gca_001606525.ASM160652v1.dna_rm.toplevel.fa
-SRR=SRR1573606
-SIM_READ_1 =simulated_reads_1.fastq
-TRIMMED_FILE := $(SRA)_trimmed.fastq
-QC_TRIMMED_FILE := $(SRR)_trimmed_qc.fastq
-TRIMMOMATIC_VER := 0.39
-TRIMMOMATIC_DIR := Trimmomatic-$(TRIMMOMATIC_VER)
-TRIMMOMATIC_JAR := $(TRIMMOMATIC_DIR)/trimmomatic-$(TRIMMOMATIC_VER).jar
-ADAPTER_FILE := $(TRIMMOMATIC_DIR)/adapters/TruSeq3-SE.fa
-FASTQC_CMD := fastqc
-SRA_DIR := sra_data/$(SRR)
-QC_DIR := qcreports
-TRIM_DIR := $(SRA_DIR)/trimmed
+# Set SRA number
+SRR = SRR1573606
 
-# Help
-usage:
-	@echo "  genome   - Download and unzip the genome"
-	@echo "  simulate_genome - Simulate reads from the genome"
-	@echo "  download - Download reads from SRA"
-	@echo "  trim     - Trim reads using Trimmomatic"
-	@echo "  fastqc   - Generate FastQC reports"
+# Genome stored locally
+REF = Escherichia_coli_gca_001606525.ASM160652v1.dna_rm.toplevel.fa
 
-# Download genome
+# Number of reads to simulate or download
+N = 100000
+
+# Name for single-end read
+R1 = ${SRR}.trim.fastq
+
+# Name of trimmed reads
+Q1 = ${R1}
+
+# -- Nothing needs to change below --
+
+help:
+	@echo "Usage:"
+	@echo "make genome - download the genome"
+	@echo "make simulate_genome - simulate reads from the genome"
+	@echo "make fastq_trim - retrieve SRR run info from SRA, filter, trim"
+
 genome:
-	mkdir -p genome_data
-	cd genome_data && wget $(GENOME_URL)
-	cd genome_data && gunzip $(GENOME_GZ)
+	@echo "# Get genome data"
+	curl -o ${REF}.gz https://ftp.ensemblgenomes.ebi.ac.uk/pub/bacteria/release-59/fasta/bacteria_12_collection/escherichia_coli_gca_001606525/dna/Escherichia_coli_gca_001606525.ASM160652v1.dna_rm.toplevel.fa.gz
+	@echo "# Decompress the genome"
+	gunzip ${REF}.gz
 
-# Simulate reads
 simulate_genome: genome
-	@echo "Simulating FASTQ reads..."
-	@echo "GENOME_FILE: $(GENOME_FILE)"
-	@echo "SIM_READ_1: $(SIM_READ_1)"
-	wgsim -N 100000 -1 150 $(GENOME_FILE) $(SIM_READ_1) /dev/null
-	@echo "Compressing simulated reads..."
-	gzip $(SIM_READ_1)
+	@echo "# Simulate FASTQ reads"
+	wgsim -N ${N} -1 150 ${REF} simulated_reads_1.fastq /dev/null
+	@echo "# Compressing simulated reads"
+	gzip simulated_reads_1.fastq
 
-
-# Download reads from SRA and run FastQC
-download:
-	mkdir -p $(SRR) $(QC_DIR)   # Create directories
-	fastq-dump --split-files --outdir $(SRA_DIR) $(SRR)
-	$(FASTQC_CMD) $(SRA_DIR)/$(SRR)_1.fastq -o $(QC_DIR)
-
-
-# Download Trimmomatic if not present
-trimmomatic:
-	@if [ ! -f "$(TRIMMOMATIC_JAR)" ]; then \
-	echo "Downloading Trimmomatic..."; \
-	wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-$(TRIMMOMATIC_VER).zip; \
-	unzip Trimmomatic-$(TRIMMOMATIC_VER).zip; \
-	fi
-
-# Trim reads using Trimmomatic and run FastQC
-trim: trimmomatic
-	@echo "Trimming reads with Trimmomatic..."
-	mkdir -p $(TRIM_DIR)
-	java -jar $(TRIMMOMATIC_JAR) SE -threads 4 $(SRA_DIR)/$(SRR)_1.fastq $(TRIMMED_FILE) \
-		ILLUMINACLIP:$(ADAPTER_FILE):2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
-	$(FASTQC_CMD) $(TRIMMED_FILE) -o $(QC_DIR)
-
-
-# Generate FastQC reports
-fastqc: download trim
-	@echo "Running FastQC on all trimmed reads..."
-	$(FASTQC_CMD) $(TRIMMED_FILE) -o $(QC_DIR)
-	$(FASTQC_CMD) $(IMPROVED_TRIMMED_FILE) -o $(QC_DIR)
-
-# Clean up
-clean:
-	clear && rm -rf genome_data sra_data qcreports Trimmomatic-0.39 Trimmomatic-0.39.zip sim_read_1.fastq.gz
+fastq_trim:
+	@echo "# Obtain the FASTQ sequences for the SRR number"
+	fastq-dump -X ${N} ${SRR} > fastqdump.log.txt
+	@echo "# Make a directory for fastqc"
+	mkdir -p fastqc
+	@echo "# Check quality before trimming"
+	fastqc ${SRR}.fastq -o fastqc
+	@echo "# Apply trimming"
+	fastp --cut_tail -i ${SRR}.fastq -o ${R1}
+	@echo "# Check quality after trimming"
+	fastqc ${R1} -o fastqc
