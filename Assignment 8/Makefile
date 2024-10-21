@@ -10,7 +10,7 @@ N = 100000
 # Name for single-end read
 R1 = ${SRR}.trim.fastq
 
-# Name of trimmed reads (if applicable, but not needed for single-end)
+# Name of trimmed reads 
 Q1 = ${R1}
 
 # -- Nothing needs to change below --
