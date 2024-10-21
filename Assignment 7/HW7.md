@@ -4,16 +4,14 @@ This is a markdwon report of Makefile. The steps here metniones are about downlo
 
 
 The tools and data used are as follow:
-### Genome URL: Escherichia coli Genome
+### Genome URL: Escherichia coli Genome from Ensembl Bacteria
 ### SRA Accession: SRR1573606
 
-Tools
-:
-wgsim : Read simulation
-
-Trimmomatic :  Read trimming
-
-FastQC  : Quality control
+##Tools##
+ 
+`wgsim` : Read simulation.
+`fastp` : Trimming the reads.
+`FastQC`:Quality control.
 
 
 ## Downloading the genome: 
@@ -29,45 +27,44 @@ Genome file: Escherichia_coli_gca_001606525.ASM160652v1.dna_rm.toplevel.fa
 ```
 
 ## Simulating the Reads:
-Simulated reads were generated using wgsim. The reads were then compressed.
+Simulated reads were generated using wgsim. The reads were then compressed using gzip.
 ```
-make simulate
+make simulate_genome
 ```
 Output:
 ```
-Simulated reads: sim_read_1.fastq.gz
+Simulated reads: simulated_reads_1.fastq.gz
 ```
 
 ## Downloading SRA Data:
 Reads were downloaded from the SRA using fastq-dump and analyzed for quality using FastQC.
 ```
-make download
+make fastq_trim
 ```
 
 Output:
 ```
  SRR1573606_1.fastq
  ```
-FastQC report: Saved in qcreports
+FastQC report: Saved in fastqc directory
 
 ## Trimming Reads:
-Raw reads were trimmed using Trimmomatic with specific adapter clipping and quality thresholds. The trimmed reads were analyzed with FastQC.
+Raw reads were trimmed using fastp.This step will cut low quality regions from the reads. The trimmed reads were again analyzed with FastQC.
 ```
-make trim
+make fastq_trim
 ```
 Output:
 ```
-Trimmed reads: SRR1573606_trimmed.fastq
+Trimmed reads: SRR1573606.trim.fastq
 ```
-FastQC reports for trimmed reads: Saved in qcreports
+FastQC reports saved in fastqc directory.
 
-## Quality Control of FastQC Reports
-The quality of the trimmed reads was improved using FastQC.
+## Quality Control of trimmed reads:
+The quality of the trimmed reads were improved using FastQC.
 ```
 make fastqc
 ```
 Output:
 ```
-FastQC reports: SRR1573606_trimmed.fastq
- SRR1573606_trimmed_qc.fastq
+FastQC reports: SRR1573606.trim.fastq
 ```
