@@ -21,7 +21,6 @@ help:
 	@echo "make index - index the downloaded genome"
 	@echo "make fastq_trim - retrieve SRR run info from SRA, filter, trim"
 	@echo "make align - run bwa aligner and generate/index bam file"
-	@echo "make VCF - generate VCF file"
 
 genome:
 	@echo "# Get genome data"
