@@ -1,16 +1,25 @@
-## Stats of SRA reads before and after filtering
-![ ](<![Screenshot 2024-10-20 at 9 39 12 PM](https://github.com/user-attachments/assets/c4f4ca33-a1f8-47bf-adad-efed5eb3be39)
->) ]
-
-## Observations 
-The FASTQ file was 13 MB. After processing, it was reduced to 1.6 MB, which represents around an 87% reduction in size. Likewise, the original SAM file was 7.8 MB, which then reduced to 1.6 MB, resulting in almost an 80% reduction in size. This reduction in file size will help decrease data storage requirements and processing time, making data analysis faster.
-
-![ !alt text][<<img width="1156" alt="Screenshot 2024-10-20 at 9 58 14 PM" src="https://github.com/user-attachments/assets/0b211068-a539-43f4-bed8-120516955b6b">)
-
+## Stats of the alignment
+```
+199030 + 0 in total (QC-passed reads + QC-failed reads)
+198796 + 0 primary
+0 + 0 secondary
+234 + 0 supplementary
+0 + 0 duplicates
+0 + 0 primary duplicates
+164786 + 0 mapped (82.79% : N/A)
+164552 + 0 primary mapped (82.77% : N/A)
+198796 + 0 paired in sequencing
+99398 + 0 read1
+99398 + 0 read2
+160708 + 0 properly paired (80.84% : N/A)
+162666 + 0 with itself and mate mapped
+1886 + 0 singletons (0.95% : N/A)
+1122 + 0 with mate mapped to a different chr
+992 + 0 with mate mapped to a different chr (mapQ>=5)
+```
 
 ## IGV analysis
-
-![ !alt text](<![![Screenshot 2024-10-20 at 9 48 05 PM](https://github.com/user-attachments/assets/db596909-75fa-4102-846e-4d2a8ad80841)
+![ !alt text](<![![![Screenshot 2024-10-28 at 4 41 02 PM](https://github.com/user-attachments/assets/882900bd-fb02-4a6d-a5fc-c0adb8742ffe)
 
 
 
