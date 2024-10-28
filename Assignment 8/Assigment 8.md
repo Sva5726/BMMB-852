@@ -18,6 +18,10 @@
 992 + 0 with mate mapped to a different chr (mapQ>=5)
 ```
 
+82.79% reads were sucessfully mapped to reference genome. This indicates that the reads are high quality sequencing data.
+
+
+
 ## IGV analysis
 ![ !alt text](<![![![Screenshot 2024-10-28 at 4 41 02 PM](https://github.com/user-attachments/assets/882900bd-fb02-4a6d-a5fc-c0adb8742ffe)
 
