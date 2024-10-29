@@ -1,3 +1,5 @@
+# Organism: Escherichia coli
+
 # Set SRA number
 SRR =SRR31129135
 
@@ -7,7 +9,7 @@ REF = Escherichia_coli_gca_005045525.ASM504552v1_.dna.toplevel.fa
 # Number of reads to get
 N = 100000
 
-# Names for paired-end reads
+# Names for reads
 R1 = ${SRR}_1.trim.fastq
 R2 = ${SRR}_2.trim.fastq
 
