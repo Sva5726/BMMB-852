@@ -1,6 +1,10 @@
 
-The original SAM file was 59 MB, which is reduced to a 14 MB BAM file. It was then sorted and further reduced to 11MB, resulting in almost an 81% reduction in size. This reduction in file size will help decrease data storage requirements and processing time, making data analysis faster.
+The original SAM file was 59 MB, which is reduced to a 14 MB BAM file. It was then sorted and further reduced to 11 MB, resulting in almost an 81% reduction in size. This reduction in file size will help decrease data storage requirements and processing time, making data analysis faster.
+
+
 ![ !alt text](<![![![<img width="771" alt="Size reduction" src="https://github.com/user-attachments/assets/2eec016f-f771-4277-a6ff-9934d0c386a0">)
+
+
 
 ## Stats of the alignment
 ```
