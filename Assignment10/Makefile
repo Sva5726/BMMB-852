@@ -19,7 +19,7 @@ Q2 = ${SRR}_2.trim.fastq
 # -- Do not modify below this line --
 
 help:
-	@echo "Commands:"
+	@echo "Usage:"
 	@echo "make genome - download the genome"
 	@echo "make index - prepare genome indices"
 	@echo "make fastq_trim - retrieve, filter, and trim sequencing reads"
